@@ -7,3 +7,4 @@ Dieses Repository enthält die Infrastruktur für die ADS-Übungen.
 - [ ] Fehlende Pakete in Jupyter installieren
 - [ ] Ordnerstruktur für Jupyter-Notebooks anpassen
 - [ ] Anleitung erstellen
+- [ ] .env file erstellen und verwenden.
