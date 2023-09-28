@@ -1,0 +1,47 @@
+version: '3.7'
+
+services:
+  jupyter:
+    image: jupyter/scipy-notebook
+    container_name: jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./project-files:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+      - JUPYTER_TOKEN=1234567890
+    restart: always
+
+  postgres:
+    image: postgres:12.1
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    restart: always
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - ADMINER_DEFAULT_SERVER=postgres
+      - ADMINER_PLUGINS=tinymce dump-zip
+
+volumes:
+    database:
+        driver: local
+        labels:
+          - "de.dbuas.course=ads-X"
+
