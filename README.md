@@ -51,7 +51,7 @@ PROJECT_FOLDER_NAME sollte dabei durch den erwünschten Namen des Projektes erse
 ### Option B: Repository herunterladen
 Alternativ kann das Repository auch als ZIP-Datei heruntergeladen werden. Dazu können
 die Dateien auf der [Repository-Website](https://github.com/dbuas/ads-docker-infrastructure)
-unter Releases heruntergeladen werden. Nachdem sie entpackt wurden, kann es losgehen.
+unter Releases heruntergeladen werden.
 
 ### Setzen der Umgebungsvariablen
 Um die Infrastruktur starten zu können, müssen noch einige Umgebungsvariablen gesetzt werden.
