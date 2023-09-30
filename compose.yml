@@ -22,9 +22,9 @@ services:
     volumes:
       - database:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     restart: always
 
   adminer:
@@ -41,7 +41,4 @@ services:
 
 volumes:
     database:
-        driver: local
-        labels:
-          - "de.dbuas.course=ads-X"
-
+        driver: loca
