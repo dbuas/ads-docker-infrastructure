@@ -53,6 +53,20 @@ Alternativ kann das Repository auch als ZIP-Datei heruntergeladen werden. Dazu k
 die Dateien auf der [Repository-Website](https://github.com/dbuas/ads-docker-infrastructure)
 unter Releases heruntergeladen werden. Nachdem sie entpackt wurden, kann es losgehen.
 
+### Setzen der Umgebungsvariablen
+Um die Infrastruktur starten zu können, müssen noch einige Umgebungsvariablen gesetzt werden.
+Dazu wird das Konzept der .env-Datei verwendet. Diese Datei enthält die Umgebungsvariablen, die
+von Docker automatisch erkannt werden. Ein wichtiger Aspekt dabei ist, dass .env-Dateien **NIEMALS**
+in ein Repository eingecheckt werden sollten. Daher ist die .env-Datei in der .gitignore-Datei.
+Es befindet sich eine Beispiel-Datei im Repository, die kopiert werden kann:
+
+```shell
+cp .env.example .env
+```
+
+Die Datei sollte mit einem beliebigen Texteditor geöffnet und die Variablen entsprechend
+angepasst werden.
+
 ## Starten der Infrastruktur
 
 Um die Infrastruktur zu starten, muss in das Projektverzeichnis gewechselt werden. Dort kann dann
