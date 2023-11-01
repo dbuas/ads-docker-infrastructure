@@ -39,4 +39,4 @@ services:
 
 volumes:
     database:
-        driver: loca
+        driver: local
