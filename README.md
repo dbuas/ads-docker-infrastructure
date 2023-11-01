@@ -41,11 +41,20 @@ heruntergeladen werden.
 ## Vorbereitung
 
 ### Option A: Repository klonen
-Um das Repository zu klonen, muss folgender Befehl ausgeführt werden:
+Um das Repository zu klonen, muss einer der folgenden Befehle ausgeführt werden:
+
+Clonen über HTTPS:
 
 ```shell
 git clone https://github.com/dbuas/ads-docker-infrastructure.git <PROJECT_FOLDER_NAME>
 ```
+
+Clonen über SSH:
+
+```shell
+git clone git@github.com:mhebing/ads-docker-infrastructure.git <PROJECT_FOLDER_NAME>
+```
+
 PROJECT_FOLDER_NAME sollte dabei durch den erwünschten Namen des Projektes ersetzt werden.
 
 ### Option B: Repository herunterladen
