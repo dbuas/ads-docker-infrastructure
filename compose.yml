@@ -2,16 +2,23 @@ version: '3.7'
 
 services:
   jupyter:
-    image: jupyter/scipy-notebook
+    build:
+      context: ./jupyter-server
     container_name: jupyter
     ports:
       - "8888:8888"
     volumes:
-      - ./project-files:/home/jovyan/work
+      - ./project-files:/home/${NB_USER}/work
     environment:
+      - NB_USER=${NB_USER}
       - JUPYTER_ENABLE_LAB=yes
       - GRANT_SUDO=yes
-      - JUPYTER_TOKEN=1234567890
+      - CHOWN_HOME=yes
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+    user:
+        root
+    working_dir:
+        /home/${NB_USER}/work
     restart: always
 
   postgres:
@@ -37,6 +44,7 @@ services:
       - ADMINER_DEFAULT_SERVER=postgres
       - ADMINER_PLUGINS=tinymce dump-zip
 
+# Sollte ordner sein und nicht Volume um daten verschicken zu können.
 volumes:
     database:
         driver: local
