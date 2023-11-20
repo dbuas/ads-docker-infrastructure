@@ -1,0 +1,16 @@
+{%- if cookiecutter.course == "ADS-01" -%}
+# Add ADS-01 course requirements here
+
+{%- elif cookiecutter.course == "ADS-02" -%}
+# Add ADS-02 course requirements here
+
+{%- elif cookiecutter.course == "ADS-03" -%}
+# Add ADS-03 course requirements here
+
+{%- elif cookiecutter.course == "ADS-04" -%}
+# Add ADS-04 course requirements here
+
+{%- elif cookiecutter.course == "ADS-05" -%}
+# Add ADS-05 course requirements here
+
+{% endif %}
