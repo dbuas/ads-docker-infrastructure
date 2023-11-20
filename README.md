@@ -66,7 +66,8 @@ unter Releases heruntergeladen werden.
 Um die Infrastruktur starten zu können, müssen noch einige Umgebungsvariablen gesetzt werden.
 Dazu wird das Konzept der .env-Datei verwendet. Diese Datei enthält die Umgebungsvariablen, die
 von Docker automatisch erkannt werden. Ein wichtiger Aspekt dabei ist, dass .env-Dateien **NIEMALS**
-in ein Repository eingecheckt werden sollten. Daher ist die .env-Datei in der .gitignore-Datei.
+in ein Repository eingecheckt werden sollten. Daher wurde die .env-Datei in die .gitignore-Datei eingetragen.
+Dadurch wird sie nicht im Repository angezeigt und kann nicht aus Versehen eingecheckt werden.
 Es befindet sich eine Beispiel-Datei im Repository, die kopiert werden kann:
 
 ```shell
@@ -75,6 +76,13 @@ cp .env.example .env
 
 Die Datei sollte mit einem beliebigen Texteditor geöffnet und die Variablen entsprechend
 angepasst werden.
+
+#### Jupyter Token
+
+Um Zugriff auf Jupyter zu erhalten, muss ein Token gesetzt werden. Dieses Token wird in der 
+.env-Datei mit JUPYTER_TOKEN gesetzt. Wenn über den Browser auf Jupyter zugegriffen wird, wird statt
+der Notebook-Übersicht ein Fenster angezeigt, in dem das Token eingegeben werden muss. Dieser Token kann
+dann aus der .env-Datei kopiert werden.
 
 ## Starten der Infrastruktur
 
@@ -91,7 +99,19 @@ linken Seite neben dem Namen der Container grün sein.
 
 Im Docker Desktop sind zudem die Links hinterlegt, um auf die verschiedenen Komponenten zuzugreifen.
 Wichtig sind die beiden Links zu Jupyter und Adminer. Diese können im Browser geöffnet werden in dem
-auf die Zahlen 8888:8888 oder 8080:8080 geklickt wird. Der Standartbrowser sollte sich dann öffnen
+auf die Zahlen 8888:8888 oder 8080:8080 geklickt wird. Der Standartbrowser sollte sich dann öffnen.
+
+### Installation zusätzlicher Pakete
+Um zusätzliche Pakete in Jupyter zu installieren, müssen diese in der requirements.txt-Datei eingetragen werden.
+Diese befindet sich im Ordner jupyter-server. Nachdem die Pakete eingetragen wurden, muss die
+Infrastruktur neu gestartet werden. Dazu kann folgender Befehl ausgeführt werden:
+
+```shell
+docker-compose down
+docker-compose up -d --build
+```
+
+Das build flag sorgt dafür, dass der Jupyter Container neu gebaut wird und die neuen Pakete installiert werden.
 
 
 ## Stoppen der Infrastruktur
