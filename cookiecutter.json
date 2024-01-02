@@ -1,5 +1,5 @@
 {
   "project_name": "generic-ads-project",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
   "course": ["ADS-01", "ADS-02", "ADS-03", "ADS-04", "ADS-05"]
 }
