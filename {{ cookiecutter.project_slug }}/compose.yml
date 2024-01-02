@@ -6,7 +6,7 @@ services:
       context: ./jupyter-server
     container_name: {{ cookiecutter.project_slug }}-jupyter
     ports:
-      - "8888:8888"
+      - "{{ cookiecutter.jupyter_port}}:8888"
     volumes:
       - ./project-files:/home/${NB_USER}/work
     environment:
@@ -36,7 +36,7 @@ services:
     image: adminer
     container_name: {{ cookiecutter.project_slug }}-adminer
     ports:
-      - "8080:8080"
+      - "{{ cookiecutter.adminer_port}}:8080"
     restart: always
     depends_on:
       - postgres

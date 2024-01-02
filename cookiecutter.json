@@ -1,5 +1,7 @@
 {
   "project_name": "generic-ads-project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
-  "course": ["ADS-01", "ADS-02", "ADS-03", "ADS-04", "ADS-05"]
+  "course": ["ADS-01", "ADS-02", "ADS-03", "ADS-04", "ADS-05"],
+  "jupyter_port": 8888,
+  "adminer_port": 8080
 }
