@@ -3,8 +3,8 @@ version: '3.7'
 services:
   jupyter:
     build:
-      context: cookiecutter.project_slug
-    container_name: jupyter
+      context: ./jupyter-server
+    container_name: {{ cookiecutter.project_slug }}-jupyter
     ports:
       - "8888:8888"
     volumes:
@@ -23,9 +23,9 @@ services:
 
   postgres:
     image: postgres:12.1
-    container_name: postgres
+    container_name: {{ cookiecutter.project_slug }}-postgres
     volumes:
-      - database:/var/lib/postgresql/data
+      - ./postgres/data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -34,7 +34,7 @@ services:
 
   adminer:
     image: adminer
-    container_name: adminer
+    container_name: {{ cookiecutter.project_slug }}-adminer
     ports:
       - "8080:8080"
     restart: always
@@ -43,8 +43,3 @@ services:
     environment:
       - ADMINER_DEFAULT_SERVER=postgres
       - ADMINER_PLUGINS=tinymce dump-zip
-
-# Sollte ordner sein und nicht Volume um daten verschicken zu können.
-volumes:
-    database:
-        driver: local
