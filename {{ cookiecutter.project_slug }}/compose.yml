@@ -25,7 +25,7 @@ services:
     image: postgres:12.1
     container_name: {{ cookiecutter.project_slug }}-postgres
     volumes:
-      - ./postgres/data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -43,3 +43,6 @@ services:
     environment:
       - ADMINER_DEFAULT_SERVER=postgres
       - ADMINER_PLUGINS=tinymce dump-zip
+
+volumes:
+    postgres-data:
