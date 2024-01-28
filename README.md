@@ -5,6 +5,7 @@ in den Applied Data Science Modulen der DBU. Es enthält eine Vorlage für eine 
 die Studienleistung und Übungen der ADS Module verwendet werden kann und definiert die Infrastruktur, bestehend aus
 Jupyter Notebook Server, PostgreSQL Datenbank und Adminer Datenbank-Admin-Tool.
 
+
 ## Voraussetzungen
 
 Um dieses Template zu verwenden, wird Python in einer aktuellen Version und das Cookiecutter Paket benötigt. Des Weiteren
