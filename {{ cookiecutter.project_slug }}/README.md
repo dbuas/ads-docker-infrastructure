@@ -1,6 +1,6 @@
-# ADS Infrastructure Repository
+# ADS Projekt Template
 
-Dieses Repository enthält die Infrastruktur für die ADS-Übungen. Diese kann mithilfe von Podman oder Docker
+Dieser Projekt-Ordner enthält die Infrastruktur für die ADS-Übungen. Diese kann mithilfe von Podman oder Docker
 gestartet und benutzt werden. Die Infrastruktur besteht aus folgenden Komponenten:
 
 - Jupyter Notebook Server
@@ -9,7 +9,15 @@ gestartet und benutzt werden. Die Infrastruktur besteht aus folgenden Komponente
 
 ## Voraussetzungen
 
-Da für die Infrastruktur lediglich Podman/Docker und Git benötigt werden, sind die Voraussetzungen relativ gering.
+Um das Template verwenden zu können, müssen einige Voraussetzungen erfüllt sein. Für das Erstellen der Projektstruktur
+wird Cookiecutter verwendet. Cookiecutter ist ein Tool, mit dem Projektstrukturen aus Templates erstellt werden können.
+Für Cookiecutter wird Python benötigt und kann einfach über die Paketverwaltung installiert werden.
+
+```shell
+pip install cookiecutter
+```
+
+Da für den Betrieb der Infrastruktur lediglich Podman/Docker und Git benötigt werden, sind die Voraussetzungen relativ gering.
 Ein einigermaßen aktueller Rechner mit Linux, Windows oder macOS sollte ausreichen. Sollte ein
 Firmenrechner verwendet werden, muss aller Wahrscheinlichkeit nach im Vorhinein mit der IT-Abteilung des Unternehmens 
 gesprochen werden, denn beide Tools müssen installiert werden, ggf. sind Berechtigungen und Firewall-Regeln

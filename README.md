@@ -2,9 +2,8 @@
 
 Dieses Repository ist ein [Cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/) Template für Kurse 
 in den Applied Data Science Modulen der DBU. Es enthält eine Vorlage für eine Projektstruktur, die für
-die Studienleistung und Übungen der ADS Module verwendet werden kann und definiert die Infrastruktur, bestehend aus
+die Studienleistung und Übungen der ADS-Module verwendet werden kann und definiert die Infrastruktur, bestehend aus
 Jupyter Notebook Server, PostgreSQL Datenbank und Adminer Datenbank-Admin-Tool.
-
 
 ## Voraussetzungen
 
@@ -23,8 +22,10 @@ werden:
 python --version
 ```
 
-Empfohlen wird mindestens Python 3.10, da ältere Version entweder bereits ihr End-of-Life erreicht haben oder dies
-in naher Zukunft geschehen wird.
+
+
+Gängige Praxis ist es, Pythonumgebungen zu isolieren. Empfohlen wird dafür das Paket Poetry zu verwenden. Es kann um
+einen Terminalbefehl installiert werden. Mehr Informationen dazu finden sich [hier](https://python-poetry.org/docs/).
 
 Sobald Python installiert ist, kann Cookiecutter mit folgendem Befehl installiert werden:
 
@@ -71,3 +72,26 @@ noch einige Tipps:
   gleichen Regeln wie für den Jupyter Port.
 
 Nachdem alle Fragen beantwortet wurden, wird die Projektstruktur erstellt.
+
+## Anpassen des Templates
+
+Das Repository besteht aus drei Teilen: Dem Template selbst, den Hooks und der Konfigurationsdatei `cookiecutter.json`.
+Alle Dateien, die Teil des Templates sind, befinden sich im dem Ordner `{{ cookiecutter.project_slug }}`. 
+In den Dateien und selbst Datei und Ordnernamen können Templatevariablen nutzen, die den Inhalt bzw. die Namen anpassen.
+Das ist bereits beim Ordnernamen beispielhaft zu erkennen.
+
+Daneben existiert ein weiterer Ordner names `hooks`. Dieser kann Skripte enthalten, welche das Template als solches Anpassen. 
+Beispielsweise könnten die Skripte Daten nachladen oder Ordner bzw. Dateien verändern. Wann diese Skripte ausgeführt
+werden hängt vom Namen des Skriptes an:
+
+- `pre_prompt.py`: Wird vor dem Ausführen der Fragen ausgeführt.
+- `pre_gen_project.py`: Wird nach dem Ausfüllen der Fragen ausgeführt.
+- `post_gen_project.py`: Wird nach dem Erstellen des Projektes ausgeführt.
+
+Weitere Informationen dazu finden sich in der 
+[Dokumentation](https://cookiecutter.readthedocs.io/en/stable/advanced/hooks.html).
+
+Die Datei `cookiecutter.json` enthält die Fragen, die dem Nutzer gestellt werden. Hier können auch Default-Werte angegeben werden.
+Die Inhalte der Variablen können im Template über `{{ cookiecutter.variable_name }}` abgerufen werden. Darüber hinaus
+können Variablen als private markiert werden, indem sie mit Unterstrichen beginnen. Diese Variablen werden nicht
+dem Nutzer gestellt, sondern können im Template genutzt werden. Beispiele befinden sich in der Datei.
