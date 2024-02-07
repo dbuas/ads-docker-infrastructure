@@ -20,6 +20,7 @@ das Terminal mit dem Befehl "terminal" öffnen. Auf Windows kann das Terminal mi
 gestartet werden. Idealerweise wird ein alternatives Terminal verwendet. Dazu mehr im nächsten Abschnitt.
 
 ### Alternatives Terminal für Windows
+
 Das Standard-Terminal von Windows ist nicht besonders komfortabel und verwendet andere Befehle als
 Linux und macOS. Daher empfiehlt es sich, ein alternatives Terminal zu verwenden. Ein gutes Terminal
 ist das Git Bash Terminal, welches mit Git mitinstalliert wird. Es kann mit dem Befehl "git bash"
@@ -28,16 +29,19 @@ gestartet werden.
 ## Installation
 
 ### Docker
+
 Docker lässt sich mit Docker Desktop recht einfach installieren. 
 Auf der [Docker-Website](https://docs.docker.com/desktop/) befinden sich die wesentlichen Informationen
 zur Installation.
 
 ### Alternative: Podman
+
 Als Alternative zu Docker kann auch Podman verwendet werden. Podman ist ebenso ein Container-Management-Tool. Es zeichnet
 sich durch eine höhere Sicherheit aus, da es nicht auf einen Daemon-Prozess angewiesen ist. In der Praxis
 bedeutet dies, dass Podman ohne Root-Rechte verwendet werden kann.
 
 ### Git
+
 Git ist ein Tool zu Versionsverwaltung. Das bedeutet, dass mit ihm Änderungen an Dateien nachvollzogen
 werden können. Außerdem können Änderungen an Dateien zwischen verschiedenen Rechnern synchronisiert werden.
 Auf Linux und macOS ist Git in der Regel bereits vorinstalliert. Für Windows kann Git [hier](https://git-scm.com/download/win) 
@@ -56,6 +60,7 @@ git init
 Git-Hosting-Plattform wie GitHub oder GitLab verbunden werden.
 
 ### Setzen der Umgebungsvariablen
+
 Um die Infrastruktur starten zu können, müssen noch einige Umgebungsvariablen gesetzt werden.
 Dazu wird das Konzept der .env-Datei verwendet. Diese Datei enthält die Umgebungsvariablen, die
 von Docker automatisch erkannt werden. Ein wichtiger Aspekt dabei ist, dass .env-Dateien **NIEMALS**
@@ -71,9 +76,13 @@ Token gefragt. Er muss aus der .env-Datei kopiert werden.
 
 ## Starten der Infrastruktur
 
-Um die Infrastruktur zu starten, muss in das Projektverzeichnis gewechselt werden. Sollte als
-Container-Management-Tool Podman verwendet wurden sein, so wird lediglich das Wort 'docker' durch 'podman' in den
-folgenden Befehlen verwendet. Folgender Befehl startet die Infrastruktur:
+Um die Infrastruktur zu starten, muss in das Projektverzeichnis mit dem selbstgewählten Projektnamen gewechselt werden.
+
+```shell
+cd [PROJEKTNAME]
+```
+
+Folgender Befehl startet die Infrastruktur (Sollte als Container-Management-Tool Podman verwendet wurden sein, so wird lediglich das Wort 'docker' durch 'podman' in den folgenden Befehlen verwendet.):
 
 ```shell
 docker compose up -d
@@ -86,7 +95,10 @@ Im Docker Desktop sind zudem die Links hinterlegt, um auf die verschiedenen Komp
 Wichtig sind die beiden Links zu Jupyter und Adminer. Diese können im Browser geöffnet werden in dem
 auf die Zahlen 8888:8888 oder 8080:8080 geklickt wird. Der Standartbrowser sollte sich dann öffnen.
 
+Falls du deine Passwörter für Jupyter und Adminer nicht mehr im Kopf haben solltest, findest du sie in der `.env`-Datei.
+
 ### Installation zusätzlicher Pakete
+
 Um zusätzliche Pakete in Jupyter zu installieren, müssen diese in der requirements.txt-Datei eingetragen werden.
 Diese befindet sich im Ordner jupyter-server. Nachdem die Pakete eingetragen wurden, muss die
 Infrastruktur neu gestartet werden. Dazu kann folgender Befehl ausgeführt werden:
