@@ -48,7 +48,7 @@ Windows bereitgestellte Alternative.
 Um das Template zu verwenden, muss folgender Befehl ausgeführt werden:
 
 ```shell
-cookiecutter git@github.com:dbuas/ads-docker-infrastructure.git
+cookiecutter https://github.com/dbuas/ads-docker-infrastructure
 ```
 
 Sollte dieses Template bereits einmal verwendet worden sein, wird nun gefragt, ob es aktualisiert werden soll. Dies ist
@@ -59,12 +59,10 @@ noch einige Tipps:
 
 - *Project Name*: Der Name des Projektes. Dieser sollte möglichst kurz und prägnant sein. Da der Name auch für die
   Ordnerstruktur verwendet wird, sollte er keine Sonderzeichen oder Leerzeichen enthalten. Zudem sollte er nicht zu lang sein.
-- *Project Slug*: Der Slug ist eine URL-freundliche Version des Projekt-Namens. Der Slug wird automatisch aus dem
-  Projekt-Namen generiert. Er sollte nicht verändert werden.
 - *Select Course*: Hier wird der ADS Kurs ausgewählt, für den das Projekt erstellt wird. Hier ist es wichtig, die richtige
   Auswahl zu treffen, da sich die Projektstruktur je nach Kurs unterscheiden kann und vor allem die richtigen Python-Pakete 
   in der requirements.txt Datei eingetragen werden.
-- *jupyter-port*: Der Port, auf dem der Jupyter Notebook Server erreichbar sein soll. In der Regel ist der Standardwert
+- *jupyter_port*: Der Port, auf dem der Jupyter Notebook Server erreichbar sein soll. In der Regel ist der Standardwert
   ausreichend. Je nachdem welche anderen Programme auf dem Rechner laufen, kann es jedoch sein, dass der Port bereits 
   belegt ist. In diesem Fall muss ein anderer Port gewählt werden. Es bietet sich an, einfach einen WErt zu nehmen, der etwas größer 
   oder kleiner ist als der Standardwert. Z.B. 8889 oder 8887.
