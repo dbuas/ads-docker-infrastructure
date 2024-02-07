@@ -4,7 +4,7 @@ services:
   jupyter:
     build:
       context: ./jupyter-server
-    container_name: {{ cookiecutter.project_slug }}-jupyter
+    container_name: {{ cookiecutter.__project_slug }}-jupyter
     ports:
       - "{{ cookiecutter.jupyter_port}}:8888"
     volumes:
@@ -23,7 +23,7 @@ services:
 
   postgres:
     image: postgres:12.1
-    container_name: {{ cookiecutter.project_slug }}-postgres
+    container_name: {{ cookiecutter.__project_slug }}-postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
@@ -34,7 +34,7 @@ services:
 
   adminer:
     image: adminer
-    container_name: {{ cookiecutter.project_slug }}-adminer
+    container_name: {{ cookiecutter.__project_slug }}-adminer
     ports:
       - "{{ cookiecutter.adminer_port}}:8080"
     restart: always
