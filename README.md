@@ -47,7 +47,7 @@ Windows bereitgestellte Alternative.
 Um das Template zu verwenden, muss folgender Befehl ausgeführt werden:
 
 ```shell
-cookiecutter git@github.com:dbuas/ads-docker-infrastructure.git
+cookiecutter https://github.com/dbuas/ads-docker-infrastructure
 ```
 
 Sollte dieses Template bereits einmal verwendet worden sein, wird nun gefragt, ob es aktualisiert werden soll. Dies ist
@@ -59,7 +59,7 @@ noch einige Tipps:
 - *Project Name*: Der Name des Projektes. Dieser sollte möglichst kurz und prägnant sein. Da der Name auch für die
   Ordnerstruktur verwendet wird, sollte er keine Sonderzeichen oder Leerzeichen enthalten. Zudem sollte er nicht zu lang sein.
 - *Project Slug*: Der Slug ist eine URL-freundliche Version des Projekt-Namens. Der Slug wird automatisch aus dem
-  Projekt-Namen generiert. Er sollte nicht verändert werden.
+  Projekt-Namen generiert. Er sollte nicht verändert werden, einfach `ENTER` drücken um zur nächsten Eingabe zu kommen.
 - *Select Course*: Hier wird der ADS Kurs ausgewählt, für den das Projekt erstellt wird. Hier ist es wichtig, die richtige
   Auswahl zu treffen, da sich die Projektstruktur je nach Kurs unterscheiden kann und vor allem die richtigen Python-Pakete 
   in der requirements.txt Datei eingetragen werden.
@@ -70,4 +70,4 @@ noch einige Tipps:
 - *adminer_port*: Das Gleiche gilt für den Adminer Port. Adminer ist das Web-Interface für den Datenbank-Server. Hier gelten die
   gleichen Regeln wie für den Jupyter Port.
 
-Nachdem alle Fragen beantwortet wurden, wird die Projektstruktur erstellt.
+Nachdem alle Fragen beantwortet wurden, wird die Projektstruktur in einem neuen Ordner erstellt. Darin befindet sich auch eine weitere README-Datei mit Anweisungen um Docker zu starten.
