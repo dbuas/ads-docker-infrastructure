@@ -22,10 +22,8 @@ werden:
 python --version
 ```
 
-
-
-Gängige Praxis ist es, Pythonumgebungen zu isolieren. Empfohlen wird dafür das Paket Poetry zu verwenden. Es kann um
-einen Terminalbefehl installiert werden. Mehr Informationen dazu finden sich [hier](https://python-poetry.org/docs/).
+Gängige Praxis ist es, Pythonumgebungen zu isolieren. Empfohlen wird dafür das Paket Poetry zu verwenden. Es kann mit
+einem Terminalbefehl installiert werden. Mehr Informationen dazu finden sich [hier](https://python-poetry.org/docs/).
 
 Sobald Python installiert ist, kann Cookiecutter mit folgendem Befehl installiert werden:
 
@@ -57,9 +55,9 @@ in jedem Fall zu empfehlen, da so die neueste Version des Templates verwendet wi
 Nun werden einige Fragen gestellt, um die Projektstruktur zu erstellen. Die Fragen sind relativ selbsterklärend, hier
 noch einige Tipps:
 
-- *Project Name*: Der Name des Projektes. Dieser sollte möglichst kurz und prägnant sein. Da der Name auch für die
+- *project_name*: Der Name des Projektes. Dieser sollte möglichst kurz und prägnant sein. Da der Name auch für die
   Ordnerstruktur verwendet wird, sollte er keine Sonderzeichen oder Leerzeichen enthalten. Zudem sollte er nicht zu lang sein.
-- *Select Course*: Hier wird der ADS Kurs ausgewählt, für den das Projekt erstellt wird. Hier ist es wichtig, die richtige
+- *course*: Hier wird der ADS Kurs ausgewählt, für den das Projekt erstellt wird. Hier ist es wichtig, die richtige
   Auswahl zu treffen, da sich die Projektstruktur je nach Kurs unterscheiden kann und vor allem die richtigen Python-Pakete 
   in der requirements.txt Datei eingetragen werden.
 - *jupyter_port*: Der Port, auf dem der Jupyter Notebook Server erreichbar sein soll. In der Regel ist der Standardwert
@@ -74,7 +72,7 @@ Nachdem alle Fragen beantwortet wurden, wird die Projektstruktur erstellt.
 ## Anpassen des Templates
 
 Das Repository besteht aus drei Teilen: Dem Template selbst, den Hooks und der Konfigurationsdatei `cookiecutter.json`.
-Alle Dateien, die Teil des Templates sind, befinden sich im dem Ordner `{{ cookiecutter.project_slug }}`. 
+Alle Dateien, die Teil des Templates sind, befinden sich in dem Ordner `{{ cookiecutter.__project_slug }}`. 
 In den Dateien und selbst Datei und Ordnernamen können Templatevariablen nutzen, die den Inhalt bzw. die Namen anpassen.
 Das ist bereits beim Ordnernamen beispielhaft zu erkennen.
 
@@ -93,3 +91,10 @@ Die Datei `cookiecutter.json` enthält die Fragen, die dem Nutzer gestellt werde
 Die Inhalte der Variablen können im Template über `{{ cookiecutter.variable_name }}` abgerufen werden. Darüber hinaus
 können Variablen als private markiert werden, indem sie mit Unterstrichen beginnen. Diese Variablen werden nicht
 dem Nutzer gestellt, sondern können im Template genutzt werden. Beispiele befinden sich in der Datei.
+
+###  Ändern der Requirements für den Jupyter Notebook Server.
+Soll die Liste der vorinstallierten Python-Pakete für den Jupyter Notebook Server geändert werden, so kann dies in der
+Datei `requirements.txt` im Projektordner unter jupyter-server getan werden. Hier können weitere Pakete hinzugefügt 
+oder entfernt werden. In dieser Datei ist zu sehen, wie die Pakete je nach ADS-Modul unterschieden werden.
+Soll ein Paket für alle ADS-Module hinzugefügt werden, so muss es vor der if-then-Struktur eingetragen werden,
+anderfalls jeweils unter dem entsprechenden Modul. Die Kommentare in der Datei weisen den richtigen Weg.

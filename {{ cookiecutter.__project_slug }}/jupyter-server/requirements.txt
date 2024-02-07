@@ -1,3 +1,5 @@
+# Add global requirements here
+
 {%- if cookiecutter.course == "ADS-01" -%}
 # Add ADS-01 course requirements here
 
