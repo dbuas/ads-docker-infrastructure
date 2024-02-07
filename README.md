@@ -47,7 +47,7 @@ Windows bereitgestellte Alternative.
 Um das Template zu verwenden, muss folgender Befehl ausgeführt werden:
 
 ```shell
-cookiecutter git@github.com:dbuas/ads-docker-infrastructure.git
+cookiecutter https://github.com/dbuas/ads-docker-infrastructure
 ```
 
 Sollte dieses Template bereits einmal verwendet worden sein, wird nun gefragt, ob es aktualisiert werden soll. Dies ist
