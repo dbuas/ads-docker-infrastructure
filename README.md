@@ -70,4 +70,4 @@ noch einige Tipps:
 - *adminer_port*: Das Gleiche gilt für den Adminer Port. Adminer ist das Web-Interface für den Datenbank-Server. Hier gelten die
   gleichen Regeln wie für den Jupyter Port.
 
-Nachdem alle Fragen beantwortet wurden, wird die Projektstruktur erstellt.
+Nachdem alle Fragen beantwortet wurden, wird die Projektstruktur in einem neuen Ordner erstellt. Darin befindet sich auch eine weitere README-Datei mit Anweisungen um Docker zu starten.
