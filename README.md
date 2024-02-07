@@ -59,7 +59,7 @@ noch einige Tipps:
 - *Project Name*: Der Name des Projektes. Dieser sollte möglichst kurz und prägnant sein. Da der Name auch für die
   Ordnerstruktur verwendet wird, sollte er keine Sonderzeichen oder Leerzeichen enthalten. Zudem sollte er nicht zu lang sein.
 - *Project Slug*: Der Slug ist eine URL-freundliche Version des Projekt-Namens. Der Slug wird automatisch aus dem
-  Projekt-Namen generiert. Er sollte nicht verändert werden.
+  Projekt-Namen generiert. Er sollte nicht verändert werden, einfach `ENTER` drücken um zur nächsten Eingabe zu kommen.
 - *Select Course*: Hier wird der ADS Kurs ausgewählt, für den das Projekt erstellt wird. Hier ist es wichtig, die richtige
   Auswahl zu treffen, da sich die Projektstruktur je nach Kurs unterscheiden kann und vor allem die richtigen Python-Pakete 
   in der requirements.txt Datei eingetragen werden.
